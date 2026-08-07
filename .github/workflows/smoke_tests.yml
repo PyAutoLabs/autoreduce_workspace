@@ -1,0 +1,62 @@
+name: Smoke Tests
+
+# One run per commit: PR events carry the CI; pushes only build main.
+# Superseded runs are cancelled on PR refs only — a cancelled main run
+# would read as red CI to PyAutoHeart's gate.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: smoke_tests-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+# Runs the offline-runnable tutorial scripts as an integration smoke of the
+# public autoreduce API. autoreduce is installed from the PyAutoReduce source
+# repo (same-named branch if one exists, main otherwise) — the same convention
+# the other PyAuto workspaces use for their source libraries. Everything
+# network-dependent (MAST/KOA/ALMA archive access) stays out of CI: see
+# smoke_tests.txt for the full script inventory and per-script reasons.
+jobs:
+  workspace_smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: autoreduce_workspace
+
+      - name: Clone PyAutoReduce (matching branch if it exists)
+        run: |
+          set -e
+          BRANCH="${{ github.head_ref || github.ref_name }}"
+          git clone https://github.com/PyAutoLabs/PyAutoReduce
+          if git -C PyAutoReduce ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+            echo "Branch $BRANCH exists in PyAutoReduce — checking it out"
+            git -C PyAutoReduce checkout "$BRANCH"
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install autoreduce + plotting deps
+        run: |
+          pip install --upgrade pip setuptools wheel
+          pip install ./PyAutoReduce matplotlib scipy
+
+      - name: Run offline workspace scripts
+        run: |
+          set -e
+          cd autoreduce_workspace
+          export MPLCONFIGDIR=/tmp/matplotlib
+          for s in scripts/guides/target_spec.py scripts/guides/noise_maps.py scripts/hst_acs/dials.py; do
+            echo "::group::$s"
+            python "$s"
+            echo "::endgroup::"
+          done
