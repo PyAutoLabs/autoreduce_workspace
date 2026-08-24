@@ -227,7 +227,7 @@ on real data:
   check the flag.
 
 Two constraints keep STARRED optional: it is GPL-licensed (the PyAuto* stack is permissive) and
-it depends on JAX — so it ships only as the extra `pip install "autoreduce[starred]"`, imported
+it depends on JAX — so it ships only as the extra `pip install "pyautoreduce[starred]"`, imported
 lazily. If requested and unavailable the pipeline raises loudly (`StarredUnavailableError`); it
 **never** silently falls back to Tier 1. We run it only if importable:
 """
@@ -242,7 +242,7 @@ if importlib.util.find_spec("starred") is not None:
 else:
     print(
         "\n[starred] the STARRED extra is not installed — skipping the tier-1b run.\n"
-        '[starred] install it with:  pip install "autoreduce[starred]"  (GPL + JAX).'
+        '[starred] install it with:  pip install "pyautoreduce[starred]"  (GPL + JAX).'
     )
 
 """

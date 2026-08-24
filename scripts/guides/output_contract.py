@@ -58,7 +58,7 @@ out_dir = OUTPUT_ROOT / TARGET
 if not (out_dir / "reduction.json").exists():
     print(
         f"No reduction found at {out_dir}.\n"
-        "Run `python scripts/start_here.py` first (network + autoreduce[hst] required) — "
+        "Run `python scripts/start_here.py` first (network + pyautoreduce[hst] required) — "
         "it produces the SLACS J0008-0004 dataset this guide inspects.\n"
         "Exiting cleanly; the prose in this file still reads as documentation."
     )

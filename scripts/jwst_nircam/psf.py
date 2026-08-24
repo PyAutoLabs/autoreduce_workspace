@@ -232,7 +232,7 @@ for band in PSF_BANDS:
     except Exception as error:
         print(
             f"[{band}] STARRED backend unavailable or failed ({error}). Install the "
-            "optional extra (pip install 'autoreduce[starred]') to run Tier 1b; the "
+            "optional extra (pip install 'pyautoreduce[starred]') to run Tier 1b; the "
             "Tier-1 reductions above are complete regardless."
         )
         break

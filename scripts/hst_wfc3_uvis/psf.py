@@ -164,7 +164,7 @@ print(f"photutils psf block: {json.dumps(record_epsf['psf'], indent=2)}")
 __The STARRED Backend__
 
 Now the same field through tier 1b. STARRED ships as the optional `[starred]` extra
-(`pip install "autoreduce[starred]"`) because it pulls in JAX and is GPL-licensed; it is
+(`pip install "pyautoreduce[starred]"`) because it pulls in JAX and is GPL-licensed; it is
 imported lazily, and if it is missing the pipeline raises rather than silently falling back —
 you asked for STARRED, you get STARRED or a loud error. The `try/except` below turns that
 into a friendly message so this script degrades gracefully on a minimal install.
@@ -190,7 +190,7 @@ except StarredUnavailableError:
     record_starred = None
     print(
         "STARRED is not installed, so the tier-1b reduction is skipped. "
-        'Run `pip install "autoreduce[starred]"` to enable it — the '
+        'Run `pip install "pyautoreduce[starred]"` to enable it — the '
         "photutils reduction above is complete and this script continues "
         "with it alone."
     )
