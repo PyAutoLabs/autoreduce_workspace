@@ -26,7 +26,7 @@ ray masks, the per-frame PSFs and their drop-convolution combination, and the re
 residuals that tell you how well the frames agree about where the sky is.
 
 **Dependency note:** per-frame cosmic-ray masking uses deepCR, an optional extra — install with
-`pip install "autoreduce[frames]"` before running. The run itself reuses the exposure cache from
+`pip install "pyautoreduce[frames]"` before running. The run itself reuses the exposure cache from
 `start_here.py`.
 
 __Contents__

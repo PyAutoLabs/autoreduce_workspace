@@ -44,16 +44,16 @@ published literature reduction — the workspace's quality bar:
 Install the core package, then the extras for the instrument(s) you reduce:
 
 ```bash
-pip install autoreduce            # core (numpy, astropy, astroquery, photutils, PyYAML)
+pip install pyautoreduce            # core (numpy, astropy, astroquery, photutils, PyYAML)
 ```
 
 | Extra | Installs | Needed for |
 |-------|----------|------------|
-| `autoreduce[hst]` | drizzlepac, drizzle | HST ACS + WFC3 (the AstroDrizzle combine) |
-| `autoreduce[keck]` | pykoa, drizzle | Keck NIRC2 (KOA acquisition + native combine) |
-| `autoreduce[psf]` | psfr, stpsf | High-fidelity PSF back-ends |
-| `autoreduce[starred]` | starred-astro | The STARRED super-sampled ePSF back-end (GPL + JAX) |
-| `autoreduce[frames]` | deepCR | Per-frame cosmic-ray masking (`cr_method="deepcr"`, frame products) |
+| `pyautoreduce[hst]` | drizzlepac, drizzle | HST ACS + WFC3 (the AstroDrizzle combine) |
+| `pyautoreduce[keck]` | pykoa, drizzle | Keck NIRC2 (KOA acquisition + native combine) |
+| `pyautoreduce[psf]` | psfr, stpsf | High-fidelity PSF back-ends |
+| `pyautoreduce[starred]` | starred-astro | The STARRED super-sampled ePSF back-end (GPL + JAX) |
+| `pyautoreduce[frames]` | deepCR | Per-frame cosmic-ray masking (`cr_method="deepcr"`, frame products) |
 
 Two stacks are deliberately **not** pip extras and are installed separately:
 

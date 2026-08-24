@@ -14,7 +14,7 @@ The script performs a complete, real reduction: it downloads the SLACS strong le
 SDSS J0008-0004's HST ACS/WFC exposures from the MAST archive, reduces them with the default
 pipeline, walks the provenance record, plots the products, and loads the finished dataset into
 **PyAutoLens**. Running it therefore needs network access and the HST reduction stack
-(`pip install "autoreduce[hst]"`); reading it needs neither.
+(`pip install "pyautoreduce[hst]"`); reading it needs neither.
 
 __Contents__
 
