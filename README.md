@@ -99,20 +99,17 @@ The instrument packages include the following types of example:
 
 The `README.md` files distributed throughout the workspace describe what is in each folder.
 
-## Community & Support
+## Community & Contributing
 
-Support for **PyAutoReduce** is available via the PyAuto Slack workspace, where the community
-shares updates and helps troubleshoot problems. Slack is invitation-only: if you'd like to join,
-please send an email requesting an invite.
+Questions, help with your code or your analysis, and ideas: the
+[PyAutoLabs Discussions](https://github.com/orgs/PyAutoLabs/discussions).
+Bug reports with a reproducer (a snippet, the traceback, your versions):
+an issue on the [PyAutoReduce tracker](https://github.com/PyAutoLabs/PyAutoReduce/issues). The
+Slack is for collaborators, by invitation.
 
-For installation issues, bug reports, or feature requests, please raise an issue on the
-[GitHub issues page](https://github.com/PyAutoLabs/PyAutoReduce/issues).
+Community-built tools, tutorials and how to contribute are on the [**PyAutoLens** community page](https://pyautolens.readthedocs.io/en/latest/general/community.html).
 
-## Contribution
-
-To make changes to the examples, edit the corresponding Python files (`.py`) in the `scripts`
-folder — never the notebooks, which are generated from the scripts at release time. The marker
-`# %%` alternates between code cells and markdown cells in the generated notebooks.
+Tutorial notebooks are generated from the `.py` scripts in each `scripts` folder — edit those (the `# %%` marker alternates code and markdown cells), not the notebooks.
 
 ## The Reduction Domain Ladder: Mosaics, Frames, Visibilities and Cutouts
 
