@@ -345,9 +345,7 @@ Good places to checkout next:
   the weight audit (both equally applicable to simulated data — try them on this MS).
 - `autolens_workspace/scripts/interferometer/` — fit a lens model to the visibilities you
   just simulated.
-"""
 
-"""
 __Env__ (Developer Only)
 
 ENV: network

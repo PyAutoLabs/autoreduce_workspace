@@ -295,9 +295,7 @@ Good places to checkout next:
   the only optical view.
 - `scripts/guides/output_contract.py` — what a real modeling-ready product set contains,
   i.e. everything a cutout deliberately is not.
-"""
 
-"""
 __Env__ (Developer Only)
 
 ENV: network
