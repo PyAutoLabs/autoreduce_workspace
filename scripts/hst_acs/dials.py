@@ -51,9 +51,7 @@ differ on them, so an informed user must be able to differ too:
 
 Every choice is recorded in `reduction.json`, so two datasets reduced with different dials are
 always distinguishable after the fact.
-"""
 
-"""
 __Imports__
 
 The dial mathematics below needs only the `casertano_r` helper and numpy — no network, no
@@ -91,9 +89,7 @@ samples onto the sub-pixel grid. The costs are real, though:
 For galaxy-scale lens modeling on typical 2-8 exposure ACS visits, the native 0.05"/pixel default
 is the robust choice; reach for finer scales only with rich dither sets and a science case that
 needs them.
-"""
 
-"""
 __Final Pixfrac__
 
 `final_pixfrac` is the fraction by which each input pixel is shrunk before being "dripped" onto
@@ -108,9 +104,7 @@ There is no free lunch here, only a trade, which is exactly why **PyAutoReduce**
 instead of hiding it. The default of 0.8 follows the SLACS IX-era convention for dithered ACS
 data: most of the noise-decorrelation benefit of shrinking the drop, while staying robust on the
 4-8 exposure visits typical of lens programs.
-"""
 
-"""
 __The Casertano Factor, Live__
 
 Whatever pixfrac you choose, the drizzled mosaic's pixel-to-pixel RMS *understates* the noise a
@@ -145,9 +139,7 @@ pixfrac 1.0, 1.364 at the 0.8 default, 1.250 at 0.6. Two readings of this table 
 - R is a *scalar approximation* to a correlation that is really a neighbourhood covariance. It
   makes the noise-map faithful for a chi-squared that treats pixels as independent — the honest
   correction, not a perfect one. `guides/noise_maps.py` develops this point in full.
-"""
 
-"""
 __Weight Uniformity__
 
 The guard-rail on shrinking pixfrac is coverage: if the shrunken drops no longer tile the output
@@ -166,9 +158,7 @@ the dials have outrun your dither set: back off pixfrac toward 1.0, coarsen the 
 the reduction refusing to ship (the packaging stage crashes loudly on non-finite noise pixels
 rather than silently interpolating holes — see `hst_wfc3_ir/start_here.py` for a real example of
 that guard firing).
-"""
 
-"""
 __Final Kernel__
 
 `final_kernel` sets the shape of the drop each input pixel is drizzled through. The default
@@ -179,9 +169,7 @@ which is part of why the legacy SLACS mosaics cannot be reproduced bit-for-bit t
 
 Unless you are chasing parity with a specific historical reduction, keep "square": it is the
 best-characterised choice, and the Casertano R treatment above is derived for it.
-"""
 
-"""
 __What The Literature Chose__
 
 The reason these dials exist: three exemplary lensing reductions of HST imaging made three
@@ -208,9 +196,7 @@ different sets of choices, each defensible.
 None of these is wrong. The defaults in this workspace (0.05", pixfrac 0.8, square, driz_cr) are
 the choice **PyAutoReduce** validated against SLACS parity; the dials let you reproduce any of
 the others.
-"""
 
-"""
 __Cosmic-Ray Strategy__
 
 `cr_method` selects how cosmic rays are removed at the combine stage, and it earns its place as a
@@ -245,9 +231,7 @@ deliberately gated on a human-reviewed SLACS validation, not on this workspace. 
 `cr_method="deepcr"` today when your visit has few exposures, sub-pixel dithers, or you see the
 tell-tale flux depression at the lens centre in the difference between a driz_cr and a no-CR
 star-pass mosaic (`psf.py` shows how to make one).
-"""
 
-"""
 __Decision Guidance__
 
 A short field guide, dial by dial, for a new galaxy-scale lens target on ACS:
@@ -265,9 +249,7 @@ A short field guide, dial by dial, for a new galaxy-scale lens target on ACS:
 And in every case: read `reduction.json` afterwards. The dials you chose, the R they implied and
 the uniformity they achieved are all recorded — a reduction whose diagnostics you have not read
 is not finished.
-"""
 
-"""
 __A Second Reduction (Optional)__
 
 Everything above ran offline. To *feel* the pixfrac trade on real data, re-reduce the

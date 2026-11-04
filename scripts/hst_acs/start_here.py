@@ -54,9 +54,7 @@ been compared pixel-by-pixel against the legacy SLACS modeling dataset (a data-r
 reduction's exact provenance is unrecoverable, and lens-model inferences are invariant under a
 global flux scale). The craft reference for ACS reduction more broadly is the COSMOS pipeline
 (Koekemoer et al. 2007, https://arxiv.org/abs/astro-ph/0703095).
-"""
 
-"""
 __Imports__
 
 **PyAutoReduce** exposes exactly two names: `TargetSpec` (the frozen declaration of what to

@@ -63,9 +63,7 @@ an underestimated sky RMS, unaccounted correlated noise from drizzling — masqu
 exactly the signal being measured. A reduction pipeline that gets the noise right, and writes
 down how it did so, is the difference between a substructure measurement and a systematics
 measurement. That standard is what **PyAutoReduce** aims to inherit for every dataset.
-"""
 
-"""
 __Imports__
 
 **PyAutoReduce** exposes exactly two names: `TargetSpec` (the frozen declaration of the

@@ -83,9 +83,7 @@ reduction of this field to close against, so the IR channel's validation is *int
 units, noise closure, weight uniformity and the guard behavior you will meet below. A
 snapshot program also means *few dithers*, which is exactly what makes this dataset such an
 instructive IR case.
-"""
 
-"""
 __Imports__
 
 Alongside the two **PyAutoReduce** entry points we import `instruments` — the adapter

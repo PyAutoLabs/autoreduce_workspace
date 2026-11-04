@@ -371,9 +371,7 @@ Two things are deliberately *absent* from this noise map:
   of your data and whether `statwt` was run — the single most important data-quality
   question for uv-plane modeling, treated in depth (with a verification you can run on
   your own data) in `step_by_step.py`.
-"""
 
-"""
 __The Product Triplet__
 
 Three FITS files, each a float64 array of shape (Nvis, 2), matching what
@@ -508,9 +506,7 @@ Good places to checkout next:
   lens fields like this one, whose modeling data has no optical counterpart.
 - `autolens_workspace/scripts/interferometer/` — model this dataset in the uv plane with
   **PyAutoLens**.
-"""
 
-"""
 __Env__ (Developer Only)
 
 ENV: network

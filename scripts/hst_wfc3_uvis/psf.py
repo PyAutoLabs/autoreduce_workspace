@@ -66,9 +66,7 @@ The two backends this script compares implement that empirical philosophy differ
   starlet-regularized narrow-PSF fitting, from the COSMOGRAIL lensing community
   (Michalewicz et al. 2023, JOSS 8(85), 5340; Millon et al. 2024, AJ,
   https://arxiv.org/abs/2402.08725).
-"""
 
-"""
 __Imports__
 
 `dataclasses.replace` is the idiom for spec variants: `TargetSpec` is frozen, so a second
