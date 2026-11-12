@@ -2,8 +2,8 @@
 
 This is the tutorial and example workspace for **PyAutoReduce**, a Python library that reduces raw
 archival telescope data (HST, JWST, Keck-AO, ALMA, survey cutout services) into modeling-ready
-datasets for **PyAutoLens** and **PyAutoGalaxy**. These are the canonical, agent-agnostic
-instructions for this repo; `CLAUDE.md` imports this file.
+datasets for **PyAutoLens** and **PyAutoGalaxy**. Read this file directly for the
+canonical, agent-agnostic instructions for this repo.
 
 ## Repository Structure
 
